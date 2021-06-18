@@ -1,0 +1,17 @@
+/* .imageClass{
+        width:200px;
+        height:200px;
+    }
+    .vertical-align{
+        display: flex;
+        align-items: center;
+    } */
+
+    .imageClass{
+        width: 150px;
+        height: 150px;
+    }
+    .vertical-align{
+       display: flex;
+       align-items: center;
+    }
