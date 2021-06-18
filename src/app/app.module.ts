@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectRequiredValidatorDirective } from './Shared/select-required-validator.directive';
+import { ConfirmEqualValidatorDirective } from './Shared/confirm-equal-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SelectRequiredValidatorDirective
+    SelectRequiredValidatorDirective,
+   
  
   ],
   imports: [
