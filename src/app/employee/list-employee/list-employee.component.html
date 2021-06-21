@@ -1,102 +1,37 @@
-<!-- <div class="panel panel-primary" *ngFor="let employee of employees">
-      <div class="panel-heading">
-            <h3 class="panel-title">{{employee.name}}</h3>
-          </div>
-      <div class="panel-body">
 
-            <div class="col-xs-10">
+<br>
+<div class="w-50 p-3 mx-auto" style="background-color: #eee;">
 
-                  <div class="row vertical-align">
-
-                        <div class="col-xs-4">
-                              <img class="imageClass" [src]="employee.photoPath"  />
-                            </div>
-                        <div class="col-xs-8">
-
-                              <div class="row">
-                                    <div class="col-xs-6">
-                                          Gender
-                                        </div>
-                                    <div class="col-xs-6">
-                                          : {{employee.gender}}
-                                        </div>
-                                  </div>
-                              <div class="row">
-                                    <div class="col-xs-6">
-                                          Date of Birth
-                                        </div>
-                                    <div class="col-xs-6">
-                                          : {{employee.dateOfBirth | date}}
-                                        </div>
-                                  </div>
-                              <div class="row">
-                                    <div class="col-xs-6">
-                                          Contact Preference
-                                        </div>
-                                    <div class="col-xs-6">
-                                          : {{employee.contactPreference}}
-                                        </div>
-                                  </div>
-                              <div class="row">
-                                    <div class="col-xs-6">
-                                          Phone
-                                        </div>
-                                    <div class="col-xs-6">
-                                          : {{employee.phoneNumber}}
-                                        </div>
-                                  </div>
-                              <div class="row">
-                                    <div class="col-xs-6">
-                                          Email
-                                        </div>
-                                    <div class="col-xs-6">
-                                          : {{employee.email}}
-                                        </div>
-                                  </div>
-                              <div class="row">
-                                    <div class="col-xs-6">
-                                          Department
-                                        </div>
-                                    <div class="col-xs-6">
-                                          : {{employee.department}}
-                                        </div>
-                                  </div>
-                              <div class="row">
-                                    <div class="col-xs-6">
-                                          Is Active
-                                        </div>
-                                    <div class="col-xs-6">
-                                          : {{employee.isActive}}
-                                        </div>
-                                  </div>
-
-                            </div>
-
-                      </div>
-                </div>
-          </div>
-</div> -->
-
-<div class="card" *ngFor="let employee of employees" style="margin: 10px;">
-    <div class="card-body">
+<br>
+<div class="card " *ngFor="let employee of employees" style="margin: 10px;">
+    <div class="card-body" >
         <h5 class="card-title"> Name : {{employee.name}}</h5> <br>
         <div class="row vertical-align">
             <div>
-              <img class="imageClass" [src]="employee.photoPath"  /><br><br>
+              <img class="imageClass" [src]="employee.photoPath" (click)="onClick(employee.id)" /><br><br>
                Gender :{{employee.gender}} <br>
                Date of Birth : {{employee.dateOfBirth | date}} <br>
                Contact Preference :{{employee.contactPreference}} <br>
                Phone : {{employee.phoneNumber}} <br>
                Email : {{employee.email}} <br>
                Department : {{employee.department}} <br>
+
+               <div [ngSwitch]="employee.department">
+                <span *ngSwitchCase="1"> Help Desk </span>
+                <span *ngSwitchCase="2"> HR </span>
+                <span *ngSwitchCase="3"> Customer Management </span>
+                <span *ngSwitchCase="4"> Employee Management </span>
+                <span *ngSwitchDefault> N/A </span>
+              </div>
+
                Is Active : {{employee.isActive}} <br>               
              </div>
         </div>
 
-        <!-- <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's
-            content.</p>
-        <a class="card-link">Card link</a>
-        <a class="card-link">Another link</a> -->
+      
     </div>
 </div>
+
+</div>
+
 

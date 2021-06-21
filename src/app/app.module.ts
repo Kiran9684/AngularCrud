@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectRequiredValidatorDirective } from './Shared/select-required-validator.directive';
 import { ConfirmEqualValidatorDirective } from './Shared/confirm-equal-validator.directive';
+import { CreateEmployeeCanDeactivateGuard } from './routeGuards/create-employee-can-deactivate.guard';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ConfirmEqualValidatorDirective } from './Shared/confirm-equal-validator
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [CreateEmployeeCanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

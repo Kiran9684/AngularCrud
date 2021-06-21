@@ -7,10 +7,12 @@
 
             <div class="form-group">
                 <label for="fullName">Full Name</label>
-                <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter Full Name" ngModel required  #fullnameControl = "ngModel">
-                <span *ngIf="fullnameControl.invalid && fullnameControl.touched" style="color: crimson;" > Please Enter Full Name </span>
+                <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter Full Name" ngModel
+                    required #fullnameControl="ngModel">
+                <span *ngIf="fullnameControl.invalid && fullnameControl.touched" style="color: crimson;"> Please Enter
+                    Full Name </span>
             </div>
-           
+
             <!-- Hello World -->
 
             <br>
@@ -39,76 +41,89 @@
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="emailId" id="email" placeholder="Enter Full Name" ngModel  #emailControl="ngModel" [required]="contactPrefControl.value =='email'" email>
+                <input type="email" class="form-control" name="emailId" id="email" placeholder="Enter Full Name" ngModel
+                    #emailControl="ngModel" [required]="contactPrefControl.value =='email'" email>
                 <!-- <span *ngIf="emailControl.invalid && emailControl.touched" style="color: crimson;" > Email Id is Required </span> -->
 
                 <!-- To Display Two different validation messages when email is empty and when email is invalid  -->
-                <span *ngIf="emailControl.errors?.required &&emailControl.invalid" style="color: crimson;" > Email Id is Required </span>
-                <span *ngIf="emailControl.errors?.email  &&emailControl.invalid" style="color: crimson;" > Email Id is Invalid </span>
+                <span *ngIf="emailControl.errors?.required &&emailControl.invalid" style="color: crimson;"> Email Id is
+                    Required </span>
+                <span *ngIf="emailControl.errors?.email  &&emailControl.invalid" style="color: crimson;"> Email Id is
+                    Invalid </span>
             </div>
-           
+
             <br>
 
             <div class="form-group">
                 <label for="phoneNumber">PhoneNumber</label>
-                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter phoneNumber" ngModel  [required]="contactPrefControl.value =='phone'"  #phoneNocontrol="ngModel">
-                <span *ngIf="phoneNocontrol.invalid " style="color: crimson;" > PhoneNumber Required </span>
+                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
+                    placeholder="Enter phoneNumber" ngModel [required]="contactPrefControl.value =='phone'"
+                    #phoneNocontrol="ngModel">
+                <span *ngIf="phoneNocontrol.invalid " style="color: crimson;"> PhoneNumber Required </span>
             </div>
             <br>
 
             <label>Contact Preference</label><br>
             <div class="form-group form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="contactPref" id="phone" value="phone" ngModel required #contactPrefControl='ngModel'>
+                <input class="form-check-input" type="radio" name="contactPref" id="phone" value="phone" ngModel
+                    required #contactPrefControl='ngModel'>
                 <label class="form-check-label" for="Phone">
                     Phone
                 </label>
             </div>
 
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="contactPref" id="emailId" value="email" ngModel required #contactPrefControl='ngModel'>
+                <input class="form-check-input" type="radio" name="contactPref" id="emailId" value="email" ngModel
+                    required #contactPrefControl='ngModel'>
                 <label class="form-check-label" for="EmailId">
                     Email
                 </label>
             </div>
-            <span *ngIf="contactPrefControl.invalid && contactPrefControl.touched" style="color: crimson;" > Contact Preference Is Required </span>
+            <span *ngIf="contactPrefControl.invalid && contactPrefControl.touched" style="color: crimson;"> Contact
+                Preference Is Required </span>
             <br>
             <br>
             <label>Gender :</label><br>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="Male" value="male" checked ngModel required #genderControl='ngModel' >
+                <input class="form-check-input" type="radio" name="gender" id="Male" value="male" checked ngModel
+                    required #genderControl='ngModel'>
                 <label class="form-check-label" for="male">
                     Male
                 </label>
             </div>
 
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="Female" value="female" ngModel required #genderControl='ngModel'>
+                <input class="form-check-input" type="radio" name="gender" id="Female" value="female" ngModel required
+                    #genderControl='ngModel'>
                 <label class="form-check-label" for="female">
                     FeMale
                 </label>
             </div>
-            <span *ngIf="genderControl.invalid && genderControl.touched" style="color: crimson;" > Gender Field Is Required </span>
+            <span *ngIf="genderControl.invalid && genderControl.touched" style="color: crimson;"> Gender Field Is
+                Required </span>
             <br>
             <br>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox"  name="isActiveCheck" id="isActiveCheck"
-                   [(ngModel)]="isActive" [required]="isActive == null" #isActiveControl='ngModel'>
+                <input class="form-check-input" type="checkbox" name="isActiveCheck" id="isActiveCheck"
+                    [(ngModel)]="isActive" [required]="isActive == null" #isActiveControl='ngModel'>
                 <label class="form-check-label" for="defaultCheck1">
                     Is Active ?
                 </label>
                 <!-- <br>
                 Is Active Value : {{isActive}} -->
-                    <!-- First Time isActive Variable will be null , So nly when it is null then only we are binding req attribute dynamically -->
-                    <!-- Once the check box is  checked or unchecked then it's value will be either true or false  -->
+                <!-- First Time isActive Variable will be null , So nly when it is null then only we are binding req attribute dynamically -->
+                <!-- Once the check box is  checked or unchecked then it's value will be either true or false  -->
                 <br>
-                <span *ngIf="isActiveControl.touched && isActiveControl.errors?.required" style="color: red;">Is Active Required</span>
+                <span *ngIf="isActiveControl.touched && isActiveControl.errors?.required" style="color: red;">Is Active
+                    Required</span>
             </div>
             <br>
 
             <div class="form-group col-md-8">
                 <label for="department">Department</label>
 
-                <select id="department"   name="department" class="form-control" [(ngModel)]="defaultOption"  required #departmentControl='ngModel'>
+                <select id="department" name="department" class="form-control" [(ngModel)]="defaultOption" required
+                    #departmentControl='ngModel'>
                     <!--  we will remove hardcodded and and bind array 
               <option  value="1">HR Department</option>
               <option  value="2">Help Desk Department</option>
@@ -118,7 +133,8 @@
                     <!-- In the above line you can also use property binding [value] = 'dept.id' -->
                 </select>
 
-                <span *ngIf="departmentControl.touched && departmentControl.invalid " style="color: red;">Department Is Required</span>
+                <span *ngIf="departmentControl.touched && departmentControl.invalid " style="color: red;">Department Is
+                    Required</span>
             </div>
             <br>
             <div class="form-group col-md-4">
@@ -136,7 +152,8 @@
             <br>
 
             <div class="form-group">
-                <button type="button" class="btn btn-primary" (click)='activateImage()'> {{showImage ? 'Hide':'Show'}} Preview </button>
+                <button type="button" class="btn btn-primary" (click)='activateImage()'> {{showImage ? 'Hide':'Show'}}
+                    Preview </button>
             </div>
 
             <div class="form-group">
@@ -146,21 +163,29 @@
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" class="form-control" name="password1" id="password" placeholder="Enter password" ngModel  required  #passwordControl="ngModel">
-                <span *ngIf="passwordControl.errors?.required && passwordControl.touched " style="color: crimson;" > Password Required </span>
+                <input type="text" class="form-control" name="password1" id="password" placeholder="Enter password"
+                    ngModel required #passwordControl="ngModel"
+                    (change)="confirmPasswordControl.control.updateValueAndValidity()">
+                <span *ngIf="passwordControl.errors?.required && passwordControl.touched " style="color: crimson;">
+                    Password Required </span>
             </div>
 
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="text" class="form-control"  appConfirmEqualValidator="password1"   name="confirmPassword" id="confirmPassword" placeholder="Enter password" ngModel  required  #confirmPasswordControl="ngModel">
-                <span *ngIf="confirmPasswordControl.errors?.required && confirmPasswordControl.touched " style="color: crimson;" >Confirm Password Required </span>
+                <input type="text" class="form-control" appConfirmEqualValidator="password1" name="confirmPassword"
+                    id="confirmPassword" placeholder="Enter password" ngModel required
+                    #confirmPasswordControl="ngModel">
+                <span *ngIf="confirmPasswordControl.errors?.required && confirmPasswordControl.touched "
+                    style="color: crimson;">Confirm Password Required </span>
 
-                <span *ngIf="confirmPasswordControl.errors?.notEqual && confirmPasswordControl.touched &&!confirmPasswordControl.errors?.required " style="color: crimson;" >Confirmed Password Does Not Match </span>
+                <span
+                    *ngIf="confirmPasswordControl.errors?.notEqual && confirmPasswordControl.touched &&!confirmPasswordControl.errors?.required "
+                    style="color: crimson;">Confirmed Password Does Not Match </span>
             </div>
 
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary" [disabled] ="employeeForm.invalid">Submit</button>
+                <button type="submit" class="btn btn-primary" [disabled]="employeeForm.invalid">Submit</button>
             </div>
 
         </form>

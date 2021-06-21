@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Department } from 'src/app/models/department.model';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-create-employee',
@@ -7,6 +10,8 @@ import { Department } from 'src/app/models/department.model';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
+
+  @ViewChild('employeeForm') public createEmployeeForm: NgForm;
 
 
   checkVal = 'true'; //two way binding is done , Inorder to check the checkbox by default , see html page 
@@ -21,16 +26,22 @@ export class CreateEmployeeComponent implements OnInit {
     { id: 3, name: 'Customer Management' },
     { id: 4, name: 'Employee Management' },
   ]
-  constructor() { }
+  constructor(private employeeService:EmployeeService , private router:Router) { }
 
   ngOnInit(): void {
   }
   saveEmployee(empData): void {
-    console.log(empData) //To log all the properties that ngForm provides , check in console 
-    console.log(empData.value) //To print the value entered into form 
+    console.log(empData); //To log all the properties that ngForm provides , check in console 
+    console.log(empData.value); //To print the value entered into form 
+    //console.log("Is Active Value"+empData.value.isActiveCheck);
+    this.employeeService.saveEmployee(empData.value); //To save employe data to employee array in the service class
+    this.router.navigate(['employee/list-employee'])
   }
   activateImage() {
     this.showImage = !this.showImage;
-
   }
+  // canDeactivate()
+  // {
+  //   return confirm("Are You Sure");
+  // }
 }
