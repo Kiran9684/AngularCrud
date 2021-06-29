@@ -7,7 +7,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { FormsModule } from '@angular/forms';
 import { ConfirmEqualValidatorDirective } from '../Shared/confirm-equal-validator.directive';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
-
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ]
 })
 export class EmployeeModule { }

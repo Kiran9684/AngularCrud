@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectRequiredValidatorDirective } from './Shared/select-required-validator.directive';
 import { ConfirmEqualValidatorDirective } from './Shared/confirm-equal-validator.directive';
 import { CreateEmployeeCanDeactivateGuard } from './routeGuards/create-employee-can-deactivate.guard';
-
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +22,7 @@ import { CreateEmployeeCanDeactivateGuard } from './routeGuards/create-employee-
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [CreateEmployeeCanDeactivateGuard],
   bootstrap: [AppComponent]

@@ -3,9 +3,9 @@
 <div class="w-50 p-3 mx-auto" style="background-color: #eee;">
 
 <br>
-<div class="card " *ngFor="let employee of employees" style="margin: 10px;">
+<div class="card " *ngFor="let employee of employees" style="margin: 10px;"  >
     <div class="card-body" >
-        <h5 class="card-title"> Name : {{employee.name}}</h5> <br>
+        <h5 class="card-title" [style.color]="selectedEmpId=='employee.id' ? 'green': 'black'" > Name : {{employee.name}}</h5> <br>
         <div class="row vertical-align">
             <div>
               <img class="imageClass" [src]="employee.photoPath" (click)="onClick(employee.id)" /><br><br>

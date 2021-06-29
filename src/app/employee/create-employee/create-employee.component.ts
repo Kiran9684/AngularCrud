@@ -16,7 +16,7 @@ export class CreateEmployeeComponent implements OnInit {
 
   checkVal = 'true'; //two way binding is done , Inorder to check the checkbox by default , see html page 
   defaultOption = null;//two way binding is done , Inorder to check the checkbox by default , see html page 
-  pathVal = ''; //for two binding 
+  pathVal = ''; //for two way binding 
   showImage: boolean = false;
   isActive = null;
 

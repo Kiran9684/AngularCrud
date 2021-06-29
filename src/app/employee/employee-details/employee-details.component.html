@@ -1,1 +1,44 @@
-<p>employee-details works!</p>
+
+<div class="container-fluid">
+
+    <div class="card" style="margin: 10px;">
+        <div class="bg-image hover-overlay ripple"  data-mdb-ripple-color="light">
+            <div class="card-header">
+                <h5>{{employee.name}}</h5>
+            </div> <br>
+            <img id="image" [src]="employee.photoPath" class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div> <br>
+        <div class="card-body">
+
+            <h5 class="card-title"> Email :{{employee.email}}</h5>
+            <h6 class="card-subtitle mb-2 ">Gender : {{employee.gender}}</h6>
+            <h6 class="card-subtitle mb-2 ">Date of Birth : {{employee.dateOfBirth | date}}</h6>
+            <h6 class="card-subtitle mb-2 ">Contact Preference : {{employee.contactPreference}}</h6>
+            <div [ngSwitch]="employee.department"><h6> Department :
+                <span *ngSwitchCase="1"> Help Desk </span>
+                <span *ngSwitchCase="2"> HR </span>
+                <span *ngSwitchCase="3"> Customer Management </span>
+                <span *ngSwitchCase="4"> Employee Management </span>
+                <span *ngSwitchDefault> N/A </span></h6>
+              </div>
+            
+            <h6 class="card-subtitle mb-2 ">Is Active : {{employee.isActive}}</h6>
+
+            <!-- <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+            </p> -->
+            
+            
+        </div>
+        <div class="card-footer"> 
+            <a routerLink='employee/list-employee' class="btn btn-primary">Back To List</a>
+           
+           
+            <button class="btn btn-primary" style="float: right;color: white;"(click)='viewNextEmployee()'>Next Employee</button>
+        </div>
+    </div>
+</div>
